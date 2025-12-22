@@ -1,0 +1,23 @@
+server:
+  port: 8081
+
+app:
+  jwt:
+    secret: "CAMBIA_ESTE_SECRETO_LARGO_PARA_PRODUCCION_>=32_CHARS"
+    expirationMinutes: 120
+
+spring:
+  datasource:
+    url: ${ORACLE_JDBC_URL:jdbc:oracle:thin:@YOUR_TNS_ALIAS_HIGH}
+    username: ${ORACLE_USERNAME:YOUR_USER}
+    password: ${ORACLE_PASSWORD:YOUR_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+oracle:
+  net:
+    tns_admin: ${TNS_ADMIN:}
